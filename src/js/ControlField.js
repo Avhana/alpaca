@@ -673,17 +673,10 @@
 
             var defaultSort = function(a, b) {
 
-                if (a.text > b.text) {
-                    return 1;
-                }
-                else if (a.text < b.text) {
-                    return -1;
-                }
-
-                return 0;
+                return;
             };
 
-            // assume a default sort function
+            // default does not sort
             var sortFn = defaultSort;
 
             // is there a custom sort function defined?

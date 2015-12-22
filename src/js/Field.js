@@ -1633,6 +1633,9 @@
             }
             else
             {
+                // fade in field on show
+                this.field.fadeIn(600);
+
                 // show the field
                 $(this.field).css({
                     "display": ""
