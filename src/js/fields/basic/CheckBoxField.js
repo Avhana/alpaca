@@ -189,6 +189,8 @@
                 for (var i = 0; i < self.checkboxOptions.length; i++)
                 {
                     var inputField = $(self.getFieldEl()).find("input[data-checkbox-index='" + i + "']");
+                    // this is a hack to add name field properly to multiple checkboxes
+                    $(inputField).attr('name', this.name + '[]');
                     if (Alpaca.checked(inputField))
                     {
                         var v = $(inputField).attr("data-checkbox-value");
