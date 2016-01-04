@@ -3,17 +3,21 @@
     {{#if hideNone}}
     {{else}}
     <div class="radio">
-        <label>
-            <input type="radio" {{#if options.readonly}}readonly="readonly"{{/if}} name="{{name}}" value=""/>{{{noneLabel}}}
-        </label>
+        <p>
+          <label>
+              <input type="radio" {{#if options.readonly}}readonly="readonly"{{/if}} name="{{name}}" value=""/>
+              <label>{{{noneLabel}}}</label>
+          </label>
+        </p>
     </div>
     {{/if}}
 
     {{#each selectOptions}}
     <div class="radio">
-        <label>
-            <input type="radio" {{#if ../options.readonly}}readonly="readonly"{{/if}} name="{{../name}}" value="{{value}}" {{#compare value ../data}}checked="checked"{{/compare}}/>{{{text}}}
-        </label>
+      <p>
+          <input type="radio" {{#if ../options.readonly}}readonly="readonly"{{/if}} name="{{../name}}" value="{{value}}" id="{{../name}}_{{value}}"{{#compare value ../data}}checked="checked"{{/compare}}/>
+          <label for="{{../name}}_{{value}}">{{{text}}}</label>
+      </p>
     </div>
     {{/each}}
 

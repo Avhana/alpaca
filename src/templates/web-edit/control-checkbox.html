@@ -2,19 +2,16 @@
 
     {{#if options.multiple}}
 
+      <fieldset>
+
         {{#each checkboxOptions}}
-
-            <div>
-
-                <label>
-
-                    <input type="checkbox" data-checkbox-index="{{@index}}" data-checkbox-value="{{value}}" {{#if ../../options.readonly}}readonly="readonly"{{/if}} {{#if name}}name="{{name}}"{{/if}} {{#each ../../options.data}}data-{{@key}}="{{value}}"{{/each}}/>
-                    {{{text}}}
-
-                </label>
-            </div>
-
+          <p>
+            <input type="checkbox" class="filled-in" {{#if name}}name="{{name}}"{{/if}} data-checkbox-index="{{@index}}" id="{{value}}" data-checkbox-value="{{value}}" value="{{value}}" {{#if ../../options.readonly}}readonly="readonly"{{/if}} {{#each ../../options.data}}data-{{@key}}="{{value}}"{{/each}}/>
+            <label for="{{value}}">{{{text}}}</label>
+          </p>
         {{/each}}
+
+      </fieldset>
 
     {{else}}
 
