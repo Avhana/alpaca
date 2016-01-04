@@ -414,6 +414,12 @@ gulp.task("build-scripts", function(cb) {
                 .pipe(uglify())
                 .pipe(gulp.dest('build/alpaca/bootstrap')),
 
+            // athene
+            gulp.src(paths.scripts.bootstrap)
+                .pipe(concat('alpaca.js'))
+                .pipe(wrapUmd(bootstrap_wrap))
+                .pipe(gulp.dest('../athene/app/assets/javascripts')),
+
             // jqueryui
             gulp.src(paths.scripts.jqueryui)
                 .pipe(concat('alpaca.js'))
